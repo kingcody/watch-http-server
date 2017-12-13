@@ -5,7 +5,7 @@
   "main": "./lib/http-server",
   "repository": {
     "type": "git",
-    "url": "git://github.com/gstack/watch-http-server.git"
+    "url": "git://github.com/kingcody/watch-http-server.git"
   },
   "keywords": [
     "cli",
@@ -61,6 +61,10 @@
     {
       "name": "gstack (graham s)",
       "email": "gray@ruleless.org"
+    },
+    {
+      "name": "Cody Mize",
+      "email": "npm@codymize.com"
     }
   ],
   "dependencies": {
@@ -79,12 +83,12 @@
     "stylezero": "2.1.1"
   },
   "bugs": {
-    "url": "https://github.com/gstack/watch-http-server/issues"
+    "url": "https://github.com/kingcody/watch-http-server/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/gstack/watch-http-server/raw/master/LICENSE"
+      "url": "https://github.com/kingcody/watch-http-server/raw/master/LICENSE"
     }
   ],
   "analyze": false,
