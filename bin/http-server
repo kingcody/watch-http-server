@@ -10,7 +10,7 @@ var colors = require('colors'),
 
 if (argv.h || argv.help) {
   console.log([
-    "usage: http-server [path] [options]",
+    "usage: watch-http-server [path] [options]",
     "",
     "options:",
     "  -p                 Port to use [8080]",
@@ -18,7 +18,8 @@ if (argv.h || argv.help) {
     "  -d                 Show directory listings [true]",
     "  -i                 Display autoIndex [true]",
     "  -e --ext           Default file extension if none supplied [none]",
-    "  -s --silent        Suppress log messages from output",
+    "  -s --silent        Suppress http log messages from output",
+    "  -q --quiet         Suppress program log messages from output",
     "  --cors             Enable CORS via the 'Access-Control-Allow-Origin' header",
     "  -o                 Open browser window after staring the server",
     "  -c                 Cache time (max-age) in seconds [3600], e.g. -c10 for 10 seconds.",
@@ -35,7 +36,7 @@ if (argv.h || argv.help) {
 
 var port = argv.p || parseInt(process.env.PORT, 10),
     host = argv.a || '0.0.0.0',
-    log = (argv.s || argv.silent) ? (function () {}) : console.log,
+    log = (argv.s || argv.silent) ? (function() {}) : console.log.bind(console),
     ssl = !!argv.S || !!argv.ssl,
     requestLogger;
 
@@ -62,7 +63,8 @@ function listen(port) {
     showDir: argv.d,
     autoIndex: argv.i,
     ext: argv.e || argv.ext,
-    logFn: requestLogger
+    logFn: requestLogger,
+    quiet: (argv.q || argv.silent),
   };
 
   if (argv.cors) {
