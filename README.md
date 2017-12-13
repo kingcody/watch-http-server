@@ -45,7 +45,9 @@ This will install `watch-http-server` globally so that it may be run from the co
 
 `-e` or `--ext` Default file extension if none supplied (defaults to 'html')
 
-`-s` or `--silent` Suppress log messages from output
+`-s` or `--silent` Suppress http log messages from output
+
+`-q` or `--quiet` Suppress program log messages from output
 
 `--cors` Enable CORS via the `Access-Control-Allow-Origin` header
 
